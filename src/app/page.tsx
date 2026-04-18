@@ -1,7 +1,9 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
 import Navigation from '@/components/navigation'
 import Footer from '@/components/footer'
 import Link from 'next/link'
@@ -18,7 +20,35 @@ import {
   Clock
 } from 'lucide-react'
 
+interface Product {
+  id: string
+  name: string
+  description: string
+  image: string
+  category: string
+  price: string
+  inStock: boolean
+}
+
 export default function Home() {
+  const [products, setProducts] = useState<Product[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchProducts()
+  }, [])
+
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch('/api/products')
+      const data = await response.json()
+      setProducts(data)
+    } catch (error) {
+      console.error('Error fetching products:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -35,7 +65,7 @@ export default function Home() {
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Empowering Agriculture in
-                  <span className="text-green-600 block">Nepal Since 2015</span>
+                  <span className="text-green-600 block">Nepal for Over 15 Years</span>
                 </h1>
                 <p className="text-lg text-gray-600 max-w-xl">
                   RB Agro provides high-quality fertilizers and agricultural solutions to help farmers maximize their crop yields and achieve sustainable growth.
@@ -82,7 +112,7 @@ export default function Home() {
                 <div className="text-sm text-gray-600">Products</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-green-600 mb-2">8+</div>
+                <div className="text-4xl font-bold text-green-600 mb-2">15+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
@@ -189,7 +219,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-gray-900">Trusted Partner</h3>
                   <p className="text-gray-600 text-sm">
-                    Over 8 years of trusted service to farmers in Nepal, building long-lasting relationships based on reliability.
+                    Over 15 years of trusted service to farmers in Nepal, building long-lasting relationships based on reliability.
                   </p>
                 </CardContent>
               </Card>
@@ -217,6 +247,97 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Products */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Featured Products
+              </h2>
+              <p className="text-lg text-gray-600">
+                Discover our premium quality fertilizers
+              </p>
+            </div>
+
+            {loading ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                {[...Array(4)].map((_, i) => (
+                  <Card key={i}>
+                    <div className="h-48 bg-gray-200 animate-pulse" />
+                    <div className="p-4 space-y-3">
+                      <div className="h-4 bg-gray-200 rounded animate-pulse" />
+                      <div className="h-3 bg-gray-200 rounded w-2/3 animate-pulse" />
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            ) : products.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-gray-600 mb-6">No products available yet.</p>
+                <Link href="/admin">
+                  <Button className="bg-green-600 hover:bg-green-700">
+                    Add Products
+                  </Button>
+                </Link>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+                {products.slice(0, 8).map((product) => (
+                  <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=No+Image'
+                        }}
+                      />
+                      {!product.inStock && (
+                        <div className="absolute top-2 right-2">
+                          <Badge variant="destructive">Out of Stock</Badge>
+                        </div>
+                      )}
+                    </div>
+                    <CardContent className="p-4">
+                      <div className="mb-2">
+                        <Badge variant="outline" className="text-xs">
+                          {product.category}
+                        </Badge>
+                      </div>
+                      <h3 className="font-semibold text-gray-900 mb-1 line-clamp-1">
+                        {product.name}
+                      </h3>
+                      <p className="text-sm text-gray-600 mb-2 line-clamp-2">
+                        {product.description}
+                      </p>
+                      <div className="flex items-center justify-between">
+                        <div className="text-lg font-bold text-green-600">
+                          Rs. {product.price}
+                        </div>
+                        <Link href="/products">
+                          <Button size="sm" variant="outline" className="text-xs">
+                            View Details
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
+
+            <div className="text-center">
+              <Link href="/products">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700">
+                  View All Products
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

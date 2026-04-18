@@ -279,9 +279,10 @@ export default function AdminPage() {
               </Card>
 
               {/* Setup Info */}
-              <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+              <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                 <p className="text-sm text-gray-700">
-                  <strong>First time?</strong> After logging in, you'll need to create an admin account using the setup form in the dashboard.
+                  <strong>Default Credentials:</strong> Email: <code className="bg-blue-100 px-2 py-1 rounded text-blue-800">admin</code>, Password: <code className="bg-blue-100 px-2 py-1 rounded text-blue-800">admin@123</code><br />
+                  <span className="text-xs text-gray-500 mt-1 block">Please change these credentials after logging in for security.</span>
                 </p>
               </div>
             </div>

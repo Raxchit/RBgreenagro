@@ -31,7 +31,7 @@ export default function AboutPage() {
                 About RB Agro
               </h1>
               <p className="text-xl text-green-100">
-                Empowering farmers with quality agricultural solutions since 2015
+                Empowering farmers with quality agricultural solutions for over 15 years
               </p>
             </div>
           </div>
@@ -255,7 +255,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1 text-gray-900">Trusted Partner</h3>
-                  <p className="text-gray-600 text-sm">8+ years of service to farmers in Nepal</p>
+                  <p className="text-gray-600 text-sm">15+ years of service to farmers in Nepal</p>
                 </div>
               </div>
 

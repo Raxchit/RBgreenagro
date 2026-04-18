@@ -230,15 +230,69 @@ DATABASE_URL="mongodb+srv://username:password@cluster.mongodb.net/rbagro"
 
 ## 🚢 Deployment
 
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+**Deploy your website to production with our comprehensive guides:**
 
-### Quick Deployment with Vercel (Recommended)
+### 📚 Choose Your Guide:
 
-1. Push code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Import your repository
-4. Add environment variables
-5. Click "Deploy"
+1. **[QUICK_START.md](./QUICK_START.md)** ⭐ **Start Here!**
+   - Deploy in 10-15 minutes
+   - Step-by-step simple instructions
+   - Perfect for beginners
+   - **Recommended for first-time deployment**
+
+2. **[DEPLOYMENT.md](./DEPLOYMENT.md)**
+   - Comprehensive, detailed guide
+   - Multiple deployment options
+   - Troubleshooting section
+   - Post-deployment maintenance
+
+3. **[DEPLOYMENT_FLOW.md](./DEPLOYMENT_FLOW.md)**
+   - Visual diagrams of deployment process
+   - Architecture overview
+   - Platform comparisons
+   - Time and cost breakdown
+
+### 🚀 Quick Deployment with Vercel (Recommended)
+
+**Fastest way to get online - 10 minutes, completely free!**
+
+1. **Push code to GitHub**
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/rb-agro-website.git
+   git push -u origin main
+   ```
+
+2. **Deploy on Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Sign up with GitHub (free)
+   - Click "Add New Project"
+   - Import your repository
+   - Add environment variable: `DATABASE_URL` = `file:./db/custom.db`
+   - Click "Deploy"
+
+3. **Your website is live!** 🎉
+
+### 📋 Deployment Options Comparison
+
+| Platform | Cost | Time to Deploy | Difficulty |
+|----------|------|----------------|------------|
+| **Vercel** (Recommended) | $0 | 10 minutes | ⭐ Very Easy |
+| Netlify | $0 | 10 minutes | ⭐⭐ Easy |
+| VPS/DigitalOcean | $5-10/month | 1-2 hours | ⭐⭐⭐⭐ Advanced |
+
+### ✅ After Deployment Checklist
+
+- [ ] Website loads at your URL
+- [ ] Admin panel accessible at `/admin`
+- [ ] Create admin account
+- [ ] Add your products
+- [ ] Test all forms (feedback, contact)
+- [ ] Verify mobile responsiveness
+- [ ] Set up custom domain (optional)
 
 ## 🧪 Running Tests
 

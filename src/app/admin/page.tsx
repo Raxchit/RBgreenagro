@@ -11,11 +11,11 @@ import { Lock, AlertCircle, LogOut } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
 
 export default function AdminPage() {
-  const [email, setEmail] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [adminEmail, setAdminEmail] = useState('')
+  const [adminUsername, setAdminUsername] = useState('')
   const { toast } = useToast()
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function AdminPage() {
     if (auth) {
       const parsedAuth = JSON.parse(auth)
       setIsAuthenticated(true)
-      setAdminEmail(parsedAuth.email)
+      setAdminUsername(parsedAuth.email)
     }
   }, [])
 
@@ -37,7 +37,7 @@ export default function AdminPage() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email: username, password })
       })
 
       const data = await response.json()
@@ -45,7 +45,7 @@ export default function AdminPage() {
       if (response.ok) {
         localStorage.setItem('adminAuth', JSON.stringify(data.admin))
         setIsAuthenticated(true)
-        setAdminEmail(data.admin.email)
+        setAdminUsername(data.admin.email)
         toast({
           title: 'Login Successful',
           description: 'Welcome back, Admin!',
@@ -72,7 +72,7 @@ export default function AdminPage() {
   const handleLogout = () => {
     localStorage.removeItem('adminAuth')
     setIsAuthenticated(false)
-    setAdminEmail('')
+    setAdminUsername('')
     toast({
       title: 'Logged Out',
       description: 'You have been logged out successfully.',
@@ -92,7 +92,7 @@ export default function AdminPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-                  <p className="text-gray-400 mt-1">Welcome back, {adminEmail}</p>
+                  <p className="text-gray-400 mt-1">Welcome back, {adminUsername}</p>
                 </div>
                 <Button
                   onClick={handleLogout}
@@ -244,13 +244,13 @@ export default function AdminPage() {
                 <CardContent>
                   <form onSubmit={handleLogin} className="space-y-4">
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
+                      <Label htmlFor="username">Username</Label>
                       <Input
-                        id="email"
-                        type="email"
-                        placeholder="admin@example.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        id="username"
+                        type="text"
+                        placeholder="Enter username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                         required
                       />
                     </div>
@@ -277,14 +277,6 @@ export default function AdminPage() {
                   </form>
                 </CardContent>
               </Card>
-
-              {/* Setup Info */}
-              <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <p className="text-sm text-gray-700">
-                  <strong>Default Credentials:</strong> Email: <code className="bg-blue-100 px-2 py-1 rounded text-blue-800">admin</code>, Password: <code className="bg-blue-100 px-2 py-1 rounded text-blue-800">admin@123</code><br />
-                  <span className="text-xs text-gray-500 mt-1 block">Please change these credentials after logging in for security.</span>
-                </p>
-              </div>
             </div>
           </div>
         </div>

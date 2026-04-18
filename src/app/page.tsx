@@ -49,6 +49,7 @@ export default function Home() {
       setLoading(false)
     }
   }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -123,135 +124,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About/Mission Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Our Mission & Vision
-              </h2>
-              <p className="text-lg text-gray-600">
-                Committed to empowering Nepalese farmers with quality agricultural products
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              <Card className="border-2 border-green-100 hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-6">
-                    <Award className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Our Mission</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    To provide farmers across Nepal with access to high-quality, affordable fertilizers and agricultural solutions that maximize crop productivity while promoting sustainable farming practices. We strive to be the trusted partner in every farmer's journey toward agricultural success.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-green-100 hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-6">
-                    <TrendingUp className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Our Vision</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    To become Nepal's leading agricultural supplier, known for quality, reliability, and innovation. We envision a future where every farmer has access to world-class agricultural products and expert guidance, contributing to the nation's food security and economic growth.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose Us Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose RB Agro?
-              </h2>
-              <p className="text-lg text-gray-600">
-                Your trusted partner for all agricultural needs
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
-                    <CheckCircle2 className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Premium Quality</h3>
-                  <p className="text-gray-600 text-sm">
-                    We source only the highest quality fertilizers from trusted manufacturers to ensure optimal results for your crops.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
-                    <Truck className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Fast Delivery</h3>
-                  <p className="text-gray-600 text-sm">
-                    Quick and reliable delivery across Nighad and surrounding areas, ensuring you get products when you need them.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
-                    <Users className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Expert Guidance</h3>
-                  <p className="text-gray-600 text-sm">
-                    Our experienced team provides expert advice on fertilizer selection and usage for maximum crop yield.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
-                    <Shield className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Trusted Partner</h3>
-                  <p className="text-gray-600 text-sm">
-                    Over 15 years of trusted service to farmers in Nepal, building long-lasting relationships based on reliability.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
-                    <Clock className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Timely Support</h3>
-                  <p className="text-gray-600 text-sm">
-                    24/7 customer support to address your queries and provide assistance whenever you need it.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
-                    <Award className="h-6 w-6 text-green-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Competitive Pricing</h3>
-                  <p className="text-gray-600 text-sm">
-                    We offer competitive prices without compromising on quality, making agriculture more affordable.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Products */}
+        {/* Featured Products Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-12">
@@ -338,6 +211,134 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission & Vision Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Our Mission & Vision
+              </h2>
+              <p className="text-lg text-gray-600">
+                Committed to empowering Nepalese farmers with quality agricultural products
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <Card className="border-2 border-green-100 hover:shadow-lg transition-shadow">
+                <CardContent className="p-8">
+                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-6">
+                    <Award className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Our Mission</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    To provide farmers across Nepal with access to high-quality, affordable fertilizers and agricultural solutions that maximize crop productivity while promoting sustainable farming practices. We strive to be the trusted partner in every farmer's journey toward agricultural success.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-green-100 hover:shadow-lg transition-shadow">
+                <CardContent className="p-8">
+                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-6">
+                    <TrendingUp className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Our Vision</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    To become Nepal's leading agricultural supplier, known for quality, reliability, and innovation. We envision a future where every farmer has access to world-class agricultural products and expert guidance, contributing to the nation's food security and economic growth.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Why Choose RB Agro?
+              </h2>
+              <p className="text-lg text-gray-600">
+                Your trusted partner for all agricultural needs
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
+                <CardContent className="p-6">
+                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+                    <CheckCircle2 className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Premium Quality</h3>
+                  <p className="text-gray-600 text-sm">
+                    We source only the highest quality fertilizers from trusted manufacturers to ensure optimal results for your crops.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
+                <CardContent className="p-6">
+                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+                    <Truck className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Fast Delivery</h3>
+                  <p className="text-gray-600 text-sm">
+                    Quick and reliable delivery across Nighad and surrounding areas, ensuring you get products when you need them.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
+                <CardContent className="p-6">
+                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+                    <Users className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Expert Guidance</h3>
+                  <p className="text-gray-600 text-sm">
+                    Our experienced team provides expert advice on fertilizer selection and usage for maximum crop yield.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
+                <CardContent className="p-6">
+                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+                    <Shield className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Trusted Partner</h3>
+                  <p className="text-gray-600 text-sm">
+                    Over 15 years of trusted service to farmers in Nepal, building long-lasting relationships based on reliability.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
+                <CardContent className="p-6">
+                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+                    <Clock className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Timely Support</h3>
+                  <p className="text-gray-600 text-sm">
+                    24/7 customer support to address your queries and provide assistance whenever you need it.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-all hover:-translate-y-1">
+                <CardContent className="p-6">
+                  <div className="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+                    <Award className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-900">Competitive Pricing</h3>
+                  <p className="text-gray-600 text-sm">
+                    We offer competitive prices without compromising on quality, making agriculture more affordable.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>

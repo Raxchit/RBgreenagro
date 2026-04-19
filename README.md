@@ -1,10 +1,10 @@
-# RB Agro - Agriculture Fertilizer Supplier Website
+# RB GREEN AGRO BANGYA INDUSTRIES PVT LTD - Agriculture Fertilizer Supplier Website
 
-A full-stack website for RB Agro, an agriculture fertilizer supplier based in Nighad, Nepal. Built with Next.js 16, TypeScript, Prisma, and shadcn/ui.
+A full-stack website for RB GREEN AGRO BANGYA INDUSTRIES PVT LTD, an agriculture fertilizer supplier based in Nighad, Nepal. Built with Next.js 16, TypeScript, Prisma, and shadcn/ui.
 
 ## 🌾 Business Information
 
-- **Name:** RB Agro
+- **Name:** RB GREEN AGRO BANGYA INDUSTRIES PVT LTD
 - **Location:** Nighad, Nepal
 - **Phone:** +977 9822217062
 - **Email:** rachitkalwar92@gmail.com
@@ -155,7 +155,7 @@ Navigate to `http://localhost:3000`
 - Company story and history
 - Mission, Vision, Values
 - What we offer section
-- Why Choose RB Agro
+- Why Choose RB GREEN AGRO BANGYA INDUSTRIES PVT LTD
 - Meet the team
 - Contact information
 
@@ -303,7 +303,7 @@ bun run lint
 
 ## 📄 License
 
-This project is proprietary and belongs to RB Agro.
+This project is proprietary and belongs to RB GREEN AGRO BANGYA INDUSTRIES PVT LTD.
 
 ## 👨‍💻 Development
 
@@ -332,12 +332,12 @@ For issues or questions:
 - Visit [Prisma documentation](https://www.prisma.io/docs)
 - See [DEPLOYMENT.md](./DEPLOYMENT.md) for deployment help
 
-## 📞 Contact
+## � Security Notice
 
-- **Phone:** +977 9822217062
-- **Email:** rachitkalwar92@gmail.com
-- **Location:** Nighad, Nepal
+**Important:** Never commit admin credentials or sensitive information to version control. Always use environment variables for secrets and change default passwords immediately after setup.
+
+For deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).
 
 ---
 
-**Built with ❤️ for RB Agro**
+**Built with ❤️ for RB GREEN AGRO BANGYA INDUSTRIES PVT LTD**

@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-                About RB Agro
+                About RB GREEN AGRO BANGYA INDUSTRIES PVT LTD
               </h1>
               <p className="text-xl text-green-100">
                 Empowering farmers with quality agricultural solutions for over 15 years
@@ -46,7 +46,7 @@ export default function AboutPage() {
                   Our Story
                 </h2>
                 <p className="text-lg text-gray-600 mb-4">
-                  Founded in 2015, RB Agro began with a simple yet powerful vision: to provide farmers in Nepal with access to high-quality, affordable fertilizers that would help them maximize their crop yields and improve their livelihoods.
+                  Founded in 2015, RB GREEN AGRO BANGYA INDUSTRIES PVT LTD began with a simple yet powerful vision: to provide farmers in Nepal with access to high-quality, affordable fertilizers that would help them maximize their crop yields and improve their livelihoods.
                 </p>
                 <p className="text-lg text-gray-600 mb-4">
                   Starting as a small operation in Nighad, we have grown over the years to become a trusted name in the agricultural sector, serving hundreds of farmers across the region. Our commitment to quality, reliability, and customer satisfaction has been the cornerstone of our success.
@@ -206,15 +206,15 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Why Choose RB Agro */}
+        {/* Why Choose RB GREEN AGRO BANGYA INDUSTRIES PVT LTD */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose RB Agro?
+                Why Choose RB GREEN AGRO BANGYA INDUSTRIES PVT LTD?
               </h2>
               <p className="text-lg text-gray-600">
-                The RB Agro advantage
+                The RB GREEN AGRO BANGYA INDUSTRIES PVT LTD advantage
               </p>
             </div>
 
@@ -303,7 +303,7 @@ export default function AboutPage() {
                   <h3 className="text-xl font-semibold mb-1 text-gray-900">Rachit Kalwar</h3>
                   <p className="text-green-600 font-medium mb-2">Founder & Owner</p>
                   <p className="text-gray-600 text-sm">
-                    Leading RB Agro with passion and dedication to serve farmers across Nepal
+                    Leading RB GREEN AGRO BANGYA INDUSTRIES PVT LTD with passion and dedication to serve farmers across Nepal
                   </p>
                 </CardContent>
               </Card>

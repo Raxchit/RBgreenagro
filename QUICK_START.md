@@ -1,6 +1,6 @@
-# 🚀 Quick Start Guide - Deploy RB Agro Website in 10 Minutes
+# 🚀 Quick Start Guide - Deploy RB GREEN AGRO BANGYA INDUSTRIES PVT LTD Website in 10 Minutes
 
-**Fastest way to get your RB Agro website online**
+**Fastest way to get your RB GREEN AGRO BANGYA INDUSTRIES PVT LTD website online**
 
 ---
 
@@ -56,8 +56,8 @@ This guide shows you the simplest path to deploy your website. For detailed info
    - Replace with your actual Vercel URL
 2. Scroll down to **"First Time Setup"**
 3. Enter admin credentials:
-   - Email: rachitkalwar92@gmail.com (or your email)
-   - Password: admin@123 (or your choice)
+   - Email: [YOUR_ADMIN_EMAIL]
+   - Password: [YOUR_SECURE_PASSWORD]
 4. Click **Create Admin Account**
 5. Login with your credentials
 
@@ -121,7 +121,7 @@ Making changes is simple:
 
 ## 🎉 Congratulations!
 
-You've successfully deployed your RB Agro website!
+You've successfully deployed your RB GREEN AGRO BANGYA INDUSTRIES PVT LTD website!
 
 **What you can do now:**
 - Share your website URL with customers

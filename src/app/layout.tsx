@@ -14,23 +14,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RB Agro - Premium Fertilizers & Agricultural Solutions in Nepal",
-  description: "RB Agro provides high-quality fertilizers and agricultural solutions for farmers in Nighad, Nepal. Your trusted partner for organic, NPK fertilizers, and micronutrients.",
-  keywords: ["RB Agro", "Fertilizers", "Agriculture", "Nepal", "Nighad", "Organic Fertilizers", "NPK", "Farm Supplies", "Agricultural Products"],
-  authors: [{ name: "RB Agro Team" }],
+  title: "RB GREEN AGRO BANGYA INDUSTRIES PVT LTD - Premium Fertilizers & Agricultural Solutions in Nepal",
+  description: "RB GREEN AGRO BANGYA INDUSTRIES PVT LTD provides high-quality fertilizers and agricultural solutions for farmers in Nighad, Nepal. Your trusted partner for organic, NPK fertilizers, and micronutrients.",
+  keywords: ["RB GREEN AGRO BANGYA INDUSTRIES PVT LTD", "Fertilizers", "Agriculture", "Nepal", "Nighad", "Organic Fertilizers", "NPK", "Farm Supplies", "Agricultural Products"],
+  authors: [{ name: "RB GREEN AGRO BANGYA INDUSTRIES PVT LTD Team" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/logo.svg",
   },
   openGraph: {
-    title: "RB Agro - Premium Fertilizers & Agricultural Solutions",
+    title: "RB GREEN AGRO BANGYA INDUSTRIES PVT LTD - Premium Fertilizers & Agricultural Solutions",
     description: "Your trusted partner for high-quality fertilizers in Nepal",
     url: "https://rbagro.com",
-    siteName: "RB Agro",
+    siteName: "RB GREEN AGRO BANGYA INDUSTRIES PVT LTD",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "RB Agro - Premium Fertilizers",
+    title: "RB GREEN AGRO BANGYA INDUSTRIES PVT LTD - Premium Fertilizers",
     description: "Empowering agriculture in Nepal with quality fertilizers",
   },
 };

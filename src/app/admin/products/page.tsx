@@ -40,6 +40,29 @@ export default function AdminProductsPage() {
     price: '',
     inStock: true
   })
+  const [imageSource, setImageSource] = useState<'url' | 'upload'>('url')
+  const [imageFileName, setImageFileName] = useState('')
+
+  const handleImageUpload = (file: File | null) => {
+    if (!file) {
+      setImageFileName('')
+      setFormData((prev) => ({ ...prev, image: '' }))
+      return
+    }
+
+    setImageFileName(file.name)
+    const reader = new FileReader()
+    reader.onload = () => {
+      const result = reader.result
+      if (typeof result === 'string') {
+        setFormData((prev) => ({ ...prev, image: result }))
+      }
+    }
+    reader.onerror = () => {
+      console.error('Failed to read image file')
+    }
+    reader.readAsDataURL(file)
+  }
 
   const categories = ['Organic Fertilizers', 'NPK Fertilizers', 'Micronutrients']
 
@@ -66,7 +89,10 @@ export default function AdminProductsPage() {
 
   const handleOpenDialog = (product?: Product) => {
     if (product) {
+      const source = product.image?.startsWith('data:') ? 'upload' : 'url'
       setEditingProduct(product)
+      setImageSource(source)
+      setImageFileName(source === 'upload' ? 'Uploaded image' : '')
       setFormData({
         name: product.name,
         description: product.description,
@@ -77,6 +103,8 @@ export default function AdminProductsPage() {
       })
     } else {
       setEditingProduct(null)
+      setImageSource('url')
+      setImageFileName('')
       setFormData({
         name: '',
         description: '',
@@ -91,6 +119,16 @@ export default function AdminProductsPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!formData.image) {
+      toast({
+        title: 'Error',
+        description: 'Please provide a product image via URL or upload.',
+        variant: 'destructive',
+      })
+      return
+    }
+
     const url = editingProduct
       ? `/api/products/${editingProduct.id}`
       : '/api/products'
@@ -143,12 +181,13 @@ export default function AdminProductsPage() {
         })
         fetchProducts()
       } else {
-        throw new Error('Failed to delete product')
+        const errorData = await response.json().catch(() => null)
+        throw new Error(errorData?.error || 'Failed to delete product')
       }
-    } catch (error) {
+    } catch (error: any) {
       toast({
         title: 'Error',
-        description: 'Failed to delete product. Please try again.',
+        description: error?.message || 'Failed to delete product. Please try again.',
         variant: 'destructive',
       })
     }
@@ -236,15 +275,73 @@ export default function AdminProductsPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="image">Image URL *</Label>
-                    <Input
-                      id="image"
-                      type="url"
-                      value={formData.image}
-                      onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                      placeholder="https://example.com/image.jpg"
-                      required
-                    />
+                    <Label>Product Image *</Label>
+                    <div className="flex flex-wrap gap-4 items-center">
+                      <label className="inline-flex items-center gap-2 text-sm">
+                        <input
+                          type="radio"
+                          name="imageSource"
+                          value="url"
+                          checked={imageSource === 'url'}
+                          onChange={() => {
+                            setImageSource('url')
+                            setImageFileName('')
+                            if (formData.image.startsWith('data:')) {
+                              setFormData((prev) => ({ ...prev, image: '' }))
+                            }
+                          }}
+                          className="h-4 w-4 accent-green-600"
+                        />
+                        URL
+                      </label>
+                      <label className="inline-flex items-center gap-2 text-sm">
+                        <input
+                          type="radio"
+                          name="imageSource"
+                          value="upload"
+                          checked={imageSource === 'upload'}
+                          onChange={() => {
+                            setImageSource('upload')
+                            setImageFileName('')
+                            if (!formData.image.startsWith('data:')) {
+                              setFormData((prev) => ({ ...prev, image: '' }))
+                            }
+                          }}
+                          className="h-4 w-4 accent-green-600"
+                        />
+                        Upload
+                      </label>
+                    </div>
+
+                    {imageSource === 'url' ? (
+                      <Input
+                        id="image"
+                        type="url"
+                        value={formData.image}
+                        onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                        placeholder="https://example.com/image.jpg"
+                        required
+                      />
+                    ) : (
+                      <input
+                        id="image-upload"
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0] ?? null
+                          if (file) {
+                            setImageSource('upload')
+                            handleImageUpload(file)
+                          }
+                        }}
+                        className="block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-green-600 focus:outline-none focus:ring-2 focus:ring-green-600/20"
+                      />
+                    )}
+
+                    {imageFileName && (
+                      <p className="text-sm text-gray-500">Selected file: {imageFileName}</p>
+                    )}
+
                     {formData.image && (
                       <div className="mt-2">
                         <img
@@ -339,7 +436,7 @@ export default function AdminProductsPage() {
                           alt={product.name}
                           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=No+Image'
+                            (e.target as HTMLImageElement).src = '/no-image.svg'
                           }}
                         />
                         <div className="absolute top-2 right-2">

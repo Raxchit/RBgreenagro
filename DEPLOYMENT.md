@@ -1,6 +1,10 @@
-# 🚀 RB Agro - Complete Deployment Guide
+# 🚀 RB GREEN AGRO BANGYA INDUSTRIES PVT LTD - Complete Deployment Guide
 
-**Deploy your RB Agro agriculture fertilizer website from scratch to production**
+**Deploy your RB GREEN AGRO BANGYA INDUSTRIES PVT LTD agriculture fertilizer website from scratch to production**
+
+## ⚠️ SECURITY WARNING
+
+**CRITICAL:** Never use default or example credentials in production. Always create unique, strong passwords and keep them secure. Do not commit credentials to version control.
 
 ---
 
@@ -104,7 +108,7 @@ Vercel connects to GitHub to automatically deploy your website.
 3. Select **"New repository"**
 4. Fill in the details:
    - **Repository name**: `rb-agro-website` (or any name you prefer)
-   - **Description**: RB Agro agriculture fertilizer website
+   - **Description**: RB GREEN AGRO BANGYA INDUSTRIES PVT LTD agriculture fertilizer website
    - **Public/Private**: Choose either (doesn't matter for free hosting)
 5. Click **"Create repository"**
 
@@ -133,7 +137,7 @@ git init
 git add .
 
 # Create first commit
-git commit -m "Initial commit - RB Agro website"
+git commit -m "Initial commit - RB GREEN AGRO BANGYA INDUSTRIES PVT LTD website"
 
 # Add your repository (replace YOUR_USERNAME)
 git remote add origin https://github.com/YOUR_USERNAME/rb-agro-website.git
@@ -322,8 +326,8 @@ Since this is a new deployment:
 1. Visit `https://your-domain.com/admin`
 2. Scroll to **"First Time Setup"** section
 3. Enter your admin credentials:
-   - **Email**: rachitkalwar92@gmail.com (or your admin email)
-   - **Password**: admin@123 (or your desired password)
+   - **Email**: [YOUR_ADMIN_EMAIL]
+   - **Password**: [YOUR_SECURE_PASSWORD]
 4. Click **"Create Admin Account"**
 5. Login with these credentials
 
@@ -550,7 +554,7 @@ If you need professional help:
 
 ## 🎉 Congratulations!
 
-Your RB Agro website is now live! Here's what you've achieved:
+Your RB GREEN AGRO BANGYA INDUSTRIES PVT LTD website is now live! Here's what you've achieved:
 
 ✅ Professional website for your agriculture fertilizer business  
 ✅ Online presence 24/7  
@@ -584,4 +588,4 @@ Check the troubleshooting section or seek professional assistance if needed.
 
 ---
 
-*Built for RB Agro - Quality Fertilizers for Better Harvests* 🌾
+*Built for RB GREEN AGRO BANGYA INDUSTRIES PVT LTD - Quality Fertilizers for Better Harvests* 🌾

@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Menu, X, Leaf, Phone, Mail } from 'lucide-react'
+import { Menu, X, Phone, Mail } from 'lucide-react'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -14,8 +14,12 @@ export default function Navigation() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Leaf className="h-6 w-6 text-green-600" />
-            <span className="text-xl font-bold text-foreground">RB Agro</span>
+            <img 
+              src="/logo.svg" 
+              alt="RB GREEN AGRO BANGYA INDUSTRIES PVT LTD Logo" 
+              className="h-8 w-8"
+            />
+            <span className="text-xl font-bold text-foreground">RB GREEN AGRO BANGYA INDUSTRIES PVT LTD</span>
           </Link>
 
           {/* Desktop Navigation */}

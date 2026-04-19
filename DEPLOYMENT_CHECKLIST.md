@@ -49,8 +49,8 @@
 - [ ] Go to `https://your-site.vercel.app/admin`
 - [ ] Scroll to "First Time Setup"
 - [ ] Enter admin credentials:
-  - Email: rachitkalwar92@gmail.com
-  - Password: admin@123
+  - Email: [YOUR_ADMIN_EMAIL]
+  - Password: [YOUR_SECURE_PASSWORD]
 - [ ] Click **Create Admin Account**
 - [ ] Login with these credentials
 
@@ -127,8 +127,8 @@ Live Site: https://your-site.vercel.app
 Admin URL: https://your-site.vercel.app/admin
 
 Admin Credentials:
-Email: rachitkalwar92@gmail.com
-Password: admin@123
+Email: [YOUR_ADMIN_EMAIL]
+Password: [YOUR_SECURE_PASSWORD]
 
 Domain (if applicable):
 Domain: rbagro.com
@@ -172,7 +172,7 @@ Registrar: [Your Registrar]
 
 ## 🎉 You're Done!
 
-**Your RB Agro website is live!**
+**Your RB GREEN AGRO BANGYA INDUSTRIES PVT LTD website is live!**
 
 **Share your URL:** `https://your-site.vercel.app`
 

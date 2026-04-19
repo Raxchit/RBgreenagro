@@ -9,8 +9,8 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <Leaf className="h-6 w-6 text-green-500" />
-              <span className="text-xl font-bold">RB Agro</span>
+              <img src="/logo.svg" alt="RB GREEN AGRO BANGYA INDUSTRIES PVT LTD" className="h-6 w-6" />
+              <span className="text-xl font-bold">RB GREEN AGRO BANGYA INDUSTRIES PVT LTD</span>
             </div>
             <p className="text-sm text-gray-300 mb-4 max-w-md">
               Your trusted partner for premium quality fertilizers and agricultural solutions in Nepal.
@@ -81,7 +81,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-8 border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} RB Agro. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} RB GREEN AGRO BANGYA INDUSTRIES PVT LTD. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState, type MouseEvent } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -14,6 +14,7 @@ import {
   Users,
   TrendingUp,
   CheckCircle2,
+  ArrowLeft,
   ArrowRight,
   Sparkles,
   Shield,
@@ -33,14 +34,89 @@ interface Product {
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [scrollDirection, setScrollDirection] = useState<'left' | 'right' | null>(null)
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null)
+  const animationFrameRef = useRef<number | null>(null)
+  const fertilizerImages = ['fertilizer.png', 'fertilizer1.jpg', 'fertilizer2.png', 'fertilizer3.png']
 
   useEffect(() => {
     fetchProducts()
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % fertilizerImages.length)
+    }, 5000)
+    
+    return () => clearInterval(interval)
+  }, [])
+
+  useEffect(() => {
+    const container = scrollContainerRef.current
+    if (!container || !scrollDirection) {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current)
+        animationFrameRef.current = null
+      }
+      return
+    }
+
+    const scrollStep = () => {
+      if (!container || !scrollDirection) {
+        animationFrameRef.current = null
+        return
+      }
+      const delta = scrollDirection === 'left' ? -8 : 8
+      container.scrollLeft += delta
+      animationFrameRef.current = requestAnimationFrame(scrollStep)
+    }
+
+    animationFrameRef.current = requestAnimationFrame(scrollStep)
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current)
+        animationFrameRef.current = null
+      }
+    }
+  }, [scrollDirection])
+
+  const handleProductMouseMove = (event: MouseEvent<HTMLDivElement>) => {
+    const container = scrollContainerRef.current
+    if (!container) {
+      setScrollDirection(null)
+      return
+    }
+
+    const rect = container.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    const threshold = rect.width * 0.2
+
+    if (x < threshold) {
+      setScrollDirection('left')
+    } else if (x > rect.width - threshold) {
+      setScrollDirection('right')
+    } else {
+      setScrollDirection(null)
+    }
+  }
+
   const fetchProducts = async () => {
     try {
       const response = await fetch('/api/products')
+
+      if (!response.ok) {
+        const bodyText = await response.text()
+        throw new Error(`Failed to fetch products: ${response.status} ${response.statusText} - ${bodyText}`)
+      }
+
+      const contentType = response.headers.get('content-type') || ''
+      if (!contentType.includes('application/json')) {
+        const bodyText = await response.text()
+        throw new Error(`Expected JSON response but received: ${contentType} - ${bodyText}`)
+      }
+
       const data = await response.json()
       setProducts(data)
     } catch (error) {
@@ -69,7 +145,7 @@ export default function Home() {
                   <span className="text-green-600 block">Nepal for Over 15 Years</span>
                 </h1>
                 <p className="text-lg text-gray-600 max-w-xl">
-                  RB Agro provides high-quality fertilizers and agricultural solutions to help farmers maximize their crop yields and achieve sustainable growth.
+                  RB GREEN AGRO BANGYA INDUSTRIES PVT LTD provides high-quality fertilizers and agricultural solutions to help farmers maximize their crop yields and achieve sustainable growth.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link href="/products">
@@ -85,16 +161,17 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className="relative">
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-green-600 to-emerald-500 p-8 text-white shadow-2xl">
-                  <div className="h-full flex flex-col justify-center items-center space-y-6">
-                    <Leaf className="h-32 w-32 text-white/90" />
-                    <div className="text-center space-y-2">
-                      <h3 className="text-3xl font-bold">Growing Together</h3>
-                      <p className="text-green-100 text-lg">Your Success, Our Mission</p>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative aspect-square overflow-hidden rounded-2xl shadow-2xl">
+                {fertilizerImages.map((image, index) => (
+                  <img
+                    key={image}
+                    src={`/${image}`}
+                    alt={`Fertilizer ${index + 1}`}
+                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
+                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -137,16 +214,18 @@ export default function Home() {
             </div>
 
             {loading ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                {[...Array(4)].map((_, i) => (
-                  <Card key={i}>
-                    <div className="h-48 bg-gray-200 animate-pulse" />
-                    <div className="p-4 space-y-3">
-                      <div className="h-4 bg-gray-200 rounded animate-pulse" />
-                      <div className="h-3 bg-gray-200 rounded w-2/3 animate-pulse" />
-                    </div>
-                  </Card>
-                ))}
+              <div className="overflow-x-auto pb-4 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                <div className="flex gap-6 min-w-max snap-x snap-mandatory scroll-smooth">
+                  {[...Array(4)].map((_, i) => (
+                    <Card key={i} className="min-w-[260px] sm:min-w-[300px] max-w-[300px] snap-start overflow-hidden">
+                      <div className="h-48 bg-gray-200 animate-pulse" />
+                      <div className="p-4 space-y-3">
+                        <div className="h-4 bg-gray-200 rounded animate-pulse" />
+                        <div className="h-3 bg-gray-200 rounded w-2/3 animate-pulse" />
+                      </div>
+                    </Card>
+                  ))}
+                </div>
               </div>
             ) : products.length === 0 ? (
               <div className="text-center py-12">
@@ -158,50 +237,74 @@ export default function Home() {
                 </Link>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
-                {products.slice(0, 8).map((product) => (
-                  <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                    <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x300?text=No+Image'
-                        }}
-                      />
-                      {!product.inStock && (
-                        <div className="absolute top-2 right-2">
-                          <Badge variant="destructive">Out of Stock</Badge>
+              <>
+                <p className="text-sm text-gray-500 mb-4">
+                  Hover near the left or right edge to automatically scroll.
+                </p>
+                <div className="relative">
+                  <div
+                    ref={scrollContainerRef}
+                    className="overflow-x-auto pb-4 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+                    onMouseMove={handleProductMouseMove}
+                    onMouseLeave={() => setScrollDirection(null)}
+                  >
+                    <div className="flex gap-6 min-w-max snap-x snap-mandatory scroll-smooth">
+                      {products.slice(0, 8).map((product) => (
+                        <Card key={product.id} className="min-w-[260px] sm:min-w-[300px] max-w-[300px] snap-start overflow-hidden hover:shadow-lg transition-shadow">
+                        <div className="relative h-48 overflow-hidden">
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).src = '/no-image.svg'
+                            }}
+                          />
+                          {!product.inStock && (
+                            <div className="absolute top-2 right-2">
+                              <Badge variant="destructive">Out of Stock</Badge>
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
-                    <CardContent className="p-4">
-                      <div className="mb-2">
-                        <Badge variant="outline" className="text-xs">
-                          {product.category}
-                        </Badge>
-                      </div>
-                      <h3 className="font-semibold text-gray-900 mb-1 line-clamp-1">
-                        {product.name}
-                      </h3>
-                      <p className="text-sm text-gray-600 mb-2 line-clamp-2">
-                        {product.description}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <div className="text-lg font-bold text-green-600">
-                          Rs. {product.price}
-                        </div>
-                        <Link href="/products">
-                          <Button size="sm" variant="outline" className="text-xs">
-                            View Details
-                          </Button>
-                        </Link>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                        <CardContent className="p-4">
+                          <div className="mb-2">
+                            <Badge variant="outline" className="text-xs">
+                              {product.category}
+                            </Badge>
+                          </div>
+                          <h3 className="font-semibold text-gray-900 mb-1 line-clamp-1">
+                            {product.name}
+                          </h3>
+                          <p className="text-sm text-gray-600 mb-2 line-clamp-2">
+                            {product.description}
+                          </p>
+                          <div className="flex items-center justify-between">
+                            <div className="text-lg font-bold text-green-600">
+                              Rs. {product.price}
+                            </div>
+                            <Link href="/products">
+                              <Button size="sm" variant="outline" className="text-xs">
+                                View Details
+                              </Button>
+                            </Link>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <div className="hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md">
+                    <ArrowLeft className="h-5 w-5 text-gray-500" />
+                  </div>
+                </div>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                  <div className="hidden md:flex h-10 w-10 items-center justify-center rounded-full bg-white/90 shadow-md">
+                    <ArrowRight className="h-5 w-5 text-gray-500" />
+                  </div>
+                </div>
               </div>
+              </>
             )}
 
             <div className="text-center">
@@ -260,7 +363,7 @@ export default function Home() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose RB Agro?
+                Why Choose RB GREEN AGRO BANGYA INDUSTRIES PVT LTD?
               </h2>
               <p className="text-lg text-gray-600">
                 Your trusted partner for all agricultural needs
@@ -412,7 +515,7 @@ export default function Home() {
                 Ready to Boost Your Farm's Productivity?
               </h2>
               <p className="text-lg text-gray-300 mb-8">
-                Connect with us today and discover how RB Agro can help you achieve better yields and sustainable farming practices.
+                Connect with us today and discover how RB GREEN AGRO BANGYA INDUSTRIES PVT LTD can help you achieve better yields and sustainable farming practices.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">

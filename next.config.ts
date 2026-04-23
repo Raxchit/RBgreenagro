@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
-  /* config options here */
+  experimental: {
+    serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs']
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

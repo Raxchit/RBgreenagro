@@ -7,7 +7,7 @@ A full-stack website for RB GREEN AGRO BANGYA INDUSTRIES PVT LTD, an agriculture
 - **Name:** RB GREEN AGRO BANGYA INDUSTRIES PVT LTD
 - **Location:** Nighad, Nepal
 - **Phone:** +977 9822217062
-- **Email:** rachitkalwar92@gmail.com
+- **Email:** rbagro100@gmail.com
 
 ## ✨ Features
 

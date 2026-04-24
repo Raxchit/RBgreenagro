@@ -228,14 +228,9 @@ export default function Home() {
                 </div>
               </div>
             ) : products.length === 0 ? (
-              <div className="text-center py-12">
-                <p className="text-gray-600 mb-6">No products available yet.</p>
-                <Link href="/admin">
-                  <Button className="bg-green-600 hover:bg-green-700">
-                    Add Products
-                  </Button>
-                </Link>
-              </div>
+                <div className="text-center py-12">
+                  <p className="text-gray-600 mb-6">Products will be available soon.</p>
+                </div>
             ) : (
               <>
                 <p className="text-sm text-gray-500 mb-4">

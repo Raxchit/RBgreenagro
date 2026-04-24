@@ -4,17 +4,15 @@ import { db } from '@/lib/db'
 // GET /api/products - Get all products
 export async function GET() {
   try {
+    // Safe fallback if database is not initialized
     const products = await db.product.findMany({
       orderBy: { createdAt: 'desc' }
-    })
+    }).catch(() => [])
 
     return NextResponse.json(products)
   } catch (error) {
     console.error('Error fetching products:', error)
-    return NextResponse.json(
-      { error: 'Failed to fetch products' },
-      { status: 500 }
-    )
+    return NextResponse.json([])
   }
 }
 

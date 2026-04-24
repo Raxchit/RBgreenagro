@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <MapPin className="h-4 w-4 text-green-500" />
-                <span>Nighad, Nepal</span>
+                <span>Nijghad-Bara, Nepal</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Phone className="h-4 w-4 text-green-500" />
@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Mail className="h-4 w-4 text-green-500" />
-                <span>rachitkalwar92@gmail.com</span>
+                <span>rbagro100@gmail.com</span>
               </div>
             </div>
           </div>

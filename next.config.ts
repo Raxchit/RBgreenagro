@@ -2,9 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
-  serverExternalPackages: ['@prisma/client', 'bcryptjs'],
-  eslint: {
-    ignoreDuringBuilds: true,
+  experimental: {
+    serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs']
   },
   typescript: {
     ignoreBuildErrors: true,

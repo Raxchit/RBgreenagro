@@ -3,6 +3,7 @@
 import Navigation from '@/components/navigation'
 import Footer from '@/components/footer'
 import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import {
   Award,
   Target,
@@ -282,55 +283,56 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Team Section */}
+        {/* Open Source Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                Meet Our Team
+                Open Source Project
               </h2>
               <p className="text-lg text-gray-600">
-                Dedicated professionals committed to your success
+                This project is open source and available on GitHub
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-white text-3xl font-bold">
-                    RK
+                <CardContent className="p-8">
+                  <div className="h-24 w-24 mx-auto mb-4 rounded-full bg-gray-900 flex items-center justify-center text-white">
+                    <svg className="h-12 w-12" fill="currentColor" viewBox="0 0 24 24">
+                      <path fillRule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" clipRule="evenodd" />
+                    </svg>
                   </div>
-                  <h3 className="text-xl font-semibold mb-1 text-gray-900">Rachit Kalwar</h3>
-                  <p className="text-green-600 font-medium mb-2">Founder & Owner</p>
-                  <p className="text-gray-600 text-sm">
-                    Leading RB GREEN AGRO BANGYA INDUSTRIES PVT LTD with passion and dedication to serve farmers across Nepal
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900">GitHub</h3>
+                  <p className="text-green-600 font-medium mb-4">Source Code</p>
+                  <p className="text-gray-600 mb-6">
+                    View source code, report issues, and contribute to this project
                   </p>
+                  <a href="https://github.com/Raxchit/RBgreenagro" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-gray-900 hover:bg-gray-800">
+                      View on GitHub
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
 
               <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-white text-3xl font-bold">
-                    AS
+                <CardContent className="p-8">
+                  <div className="h-24 w-24 mx-auto mb-4 rounded-full bg-black flex items-center justify-center">
+                    <svg className="h-12 w-12" viewBox="0 0 76 65" fill="white">
+                      <path d="M75 0L0 33l75 32v-21l-36-11 36-12V0z"></path>
+                    </svg>
                   </div>
-                  <h3 className="text-xl font-semibold mb-1 text-gray-900">Agricultural Experts</h3>
-                  <p className="text-green-600 font-medium mb-2">Our Expert Team</p>
-                  <p className="text-gray-600 text-sm">
-                    Experienced professionals providing expert guidance and support
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Vercel</h3>
+                  <p className="text-green-600 font-medium mb-4">Deployed On</p>
+                  <p className="text-gray-600 mb-6">
+                    Live production deployment hosted on Vercel platform
                   </p>
-                </CardContent>
-              </Card>
-
-              <Card className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="h-24 w-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-white text-3xl font-bold">
-                    ST
-                  </div>
-                  <h3 className="text-xl font-semibold mb-1 text-gray-900">Support Team</h3>
-                  <p className="text-green-600 font-medium mb-2">Customer Service</p>
-                  <p className="text-gray-600 text-sm">
-                    Dedicated support team available 24/7 to assist you
-                  </p>
+                  <a href="https://r-bgreenagro.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-black hover:bg-gray-900">
+                      View Deployment
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
             </div>

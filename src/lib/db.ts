@@ -7,7 +7,8 @@ const globalForPrisma = globalThis as unknown as {
 
 // ✅ Prisma 7 REQUIRES at least one option! Cannot be empty constructor!
 export const db = globalForPrisma.prisma ?? new PrismaClient({
-  log: ['error']
+  log: ['error'],
+  datasourceUrl: process.env.DATABASE_URL
 });
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = db

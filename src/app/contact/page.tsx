@@ -59,7 +59,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-gray-900">Phone</h3>
                   <p className="text-gray-600">
-                    +977 9822217062
+                    +977 98********
                   </p>
                 </CardContent>
               </Card>
@@ -164,7 +164,7 @@ export default function ContactPage() {
                       <Phone className="h-5 w-5 text-green-600 mt-1" />
                       <div>
                         <div className="font-medium text-gray-900">Phone</div>
-                        <div className="text-gray-600">+977 9822217062</div>
+                        <div className="text-gray-600">+977 98********</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
@@ -193,7 +193,7 @@ export default function ContactPage() {
                   </p>
                   <a href="tel:+97798********" className="inline-flex items-center text-green-600 font-medium hover:text-green-700">
                     <Phone className="h-4 w-4 mr-2" />
-                    Call Now: +977 9822217062
+                    Call Now: +977 98********
                   </a>
                 </div>
               </div>

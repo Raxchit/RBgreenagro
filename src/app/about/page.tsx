@@ -310,7 +310,7 @@ export default function AboutPage() {
                   <Phone className="h-7 w-7" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Phone</h3>
-                <p className="text-green-100 text-sm">+977 9822217062</p>
+                <p className="text-green-100 text-sm">+977 98********</p>
               </div>
 
               <div className="text-center">

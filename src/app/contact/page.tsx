@@ -47,7 +47,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-gray-900">Location</h3>
                   <p className="text-gray-600">
-                    Nighad, Nepal
+                    Nijghad, Nepal
                   </p>
                 </CardContent>
               </Card>
@@ -71,7 +71,7 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-gray-900">Email</h3>
                   <p className="text-gray-600">
-                    rachitkalwar92@gmail.com
+                    rbagro100@gmail.com
                   </p>
                 </CardContent>
               </Card>
@@ -171,14 +171,14 @@ export default function ContactPage() {
                       <Mail className="h-5 w-5 text-green-600 mt-1" />
                       <div>
                         <div className="font-medium text-gray-900">Email</div>
-                        <div className="text-gray-600">rachitkalwar92@gmail.com</div>
+                        <div className="text-gray-600">rbagro100@gmail.com</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3">
                       <MapPin className="h-5 w-5 text-green-600 mt-1" />
                       <div>
                         <div className="font-medium text-gray-900">Address</div>
-                        <div className="text-gray-600">Nighad, Nepal</div>
+                        <div className="text-gray-600">Nijghad, Nepal</div>
                       </div>
                     </div>
                   </CardContent>
@@ -191,7 +191,7 @@ export default function ContactPage() {
                   <p className="text-gray-600 mb-4">
                     Call us directly at our phone number for urgent inquiries about products and availability.
                   </p>
-                  <a href="tel:+9779822217062" className="inline-flex items-center text-green-600 font-medium hover:text-green-700">
+                  <a href="tel:+97798********" className="inline-flex items-center text-green-600 font-medium hover:text-green-700">
                     <Phone className="h-4 w-4 mr-2" />
                     Call Now: +977 9822217062
                   </a>
@@ -209,7 +209,7 @@ export default function ContactPage() {
                 Find Us
               </h2>
               <p className="text-lg text-gray-600">
-                Located in Nighad, Nepal
+                Located in Nijghad, Nepal
               </p>
             </div>
 
@@ -220,7 +220,7 @@ export default function ContactPage() {
                     <div className="text-center">
                       <MapPin className="h-16 w-16 mx-auto text-green-600 mb-4" />
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                        Nighad, Nepal
+                        Nijghad, Nepal
                       </h3>
                       <p className="text-gray-600">
                         Visit our store for quality fertilizers

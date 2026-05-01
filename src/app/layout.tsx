@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "RB GREEN AGRO BANGYA INDUSTRIES PVT LTD - Premium Fertilizers & Agricultural Solutions in Nepal",
-  description: "RB GREEN AGRO BANGYA INDUSTRIES PVT LTD provides high-quality fertilizers and agricultural solutions for farmers in Nighad, Nepal. Your trusted partner for organic, NPK fertilizers, and micronutrients.",
-  keywords: ["RB GREEN AGRO BANGYA INDUSTRIES PVT LTD", "Fertilizers", "Agriculture", "Nepal", "Nighad", "Organic Fertilizers", "NPK", "Farm Supplies", "Agricultural Products"],
+  description: "RB GREEN AGRO BANGYA INDUSTRIES PVT LTD provides high-quality fertilizers and agricultural solutions for farmers in Nijghad, Nepal. Your trusted partner for organic, NPK fertilizers, and micronutrients.",
+  keywords: ["RB GREEN AGRO BANGYA INDUSTRIES PVT LTD", "Fertilizers", "Agriculture", "Nepal", "Nijghad", "Organic Fertilizers", "NPK", "Farm Supplies", "Agricultural Products"],
   authors: [{ name: "RB GREEN AGRO BANGYA INDUSTRIES PVT LTD Team" }],
   icons: {
     icon: "/logo.svg",

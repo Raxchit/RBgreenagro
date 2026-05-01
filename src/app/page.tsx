@@ -385,7 +385,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-gray-900">Fast Delivery</h3>
                   <p className="text-gray-600 text-sm">
-                    Quick and reliable delivery across Nighad and surrounding areas, ensuring you get products when you need them.
+                    Quick and reliable delivery across Nijghad and surrounding areas, ensuring you get products when you need them.
                   </p>
                 </CardContent>
               </Card>

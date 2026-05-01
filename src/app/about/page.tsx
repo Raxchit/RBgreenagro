@@ -32,7 +32,7 @@ export default function AboutPage() {
                 About RB GREEN AGRO BANGYA INDUSTRIES PVT LTD
               </h1>
               <p className="text-xl text-green-100">
-                Empowering farmers with quality agricultural solutions for over 15 years
+                Empowering farmers with quality agricultural solutions for over 5 years
               </p>
             </div>
           </div>
@@ -50,7 +50,7 @@ export default function AboutPage() {
                   Founded in 2015, RB GREEN AGRO BANGYA INDUSTRIES PVT LTD began with a simple yet powerful vision: to provide farmers in Nepal with access to high-quality, affordable fertilizers that would help them maximize their crop yields and improve their livelihoods.
                 </p>
                 <p className="text-lg text-gray-600 mb-4">
-                  Starting as a small operation in Nighad, we have grown over the years to become a trusted name in the agricultural sector, serving hundreds of farmers across the region. Our commitment to quality, reliability, and customer satisfaction has been the cornerstone of our success.
+                  Starting as a small operation in Nijghad, we have grown over the years to become a trusted name in the agricultural sector, serving hundreds of farmers across the region. Our commitment to quality, reliability, and customer satisfaction has been the cornerstone of our success.
                 </p>
                 <p className="text-lg text-gray-600">
                   Today, we continue to expand our product offerings and services, always keeping our focus on the needs of our farming community and the broader goal of supporting Nepal's agricultural development.
@@ -256,7 +256,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-1 text-gray-900">Trusted Partner</h3>
-                  <p className="text-gray-600 text-sm">15+ years of service to farmers in Nepal</p>
+                  <p className="text-gray-600 text-sm">5+ years of service to farmers in Nepal</p>
                 </div>
               </div>
 
@@ -302,7 +302,7 @@ export default function AboutPage() {
                   <MapPin className="h-7 w-7" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Location</h3>
-                <p className="text-green-100 text-sm">Nighad, Nepal</p>
+                <p className="text-green-100 text-sm">Nijghad, Nepal</p>
               </div>
 
               <div className="text-center">
@@ -318,7 +318,7 @@ export default function AboutPage() {
                   <Mail className="h-7 w-7" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Email</h3>
-                <p className="text-green-100 text-sm">rachitkalwar92@gmail.com</p>
+                <p className="text-green-100 text-sm">rbagro100@gmail.com</p>
               </div>
             </div>
           </div>

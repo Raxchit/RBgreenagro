@@ -142,7 +142,7 @@ export default function Home() {
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Empowering Agriculture in
-                  <span className="text-green-600 block">Nepal for Over 15 Years</span>
+                  <span className="text-green-600 block">Nepal for Over 5 Years</span>
                 </h1>
                 <p className="text-lg text-gray-600 max-w-xl">
                   RB GREEN AGRO BANGYA INDUSTRIES PVT LTD provides high-quality fertilizers and agricultural solutions to help farmers maximize their crop yields and achieve sustainable growth.
@@ -409,7 +409,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-lg font-semibold mb-2 text-gray-900">Trusted Partner</h3>
                   <p className="text-gray-600 text-sm">
-                    Over 15 years of trusted service to farmers in Nepal, building long-lasting relationships based on reliability.
+                    Over 5 years of trusted service to farmers in Nepal, building long-lasting relationships based on reliability.
                   </p>
                 </CardContent>
               </Card>

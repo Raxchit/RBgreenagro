@@ -47,7 +47,7 @@ export default function AboutPage() {
                   Our Story
                 </h2>
                 <p className="text-lg text-gray-600 mb-4">
-                  Founded in 2015, RB GREEN AGRO BANGYA INDUSTRIES PVT LTD began with a simple yet powerful vision: to provide farmers in Nepal with access to high-quality, affordable fertilizers that would help them maximize their crop yields and improve their livelihoods.
+                  Founded in 2021, RB GREEN AGRO BANGYA INDUSTRIES PVT LTD began with a simple yet powerful vision: to provide farmers in Nepal with access to high-quality, affordable fertilizers that would help them maximize their crop yields and improve their livelihoods.
                 </p>
                 <p className="text-lg text-gray-600 mb-4">
                   Starting as a small operation in Nijghad, we have grown over the years to become a trusted name in the agricultural sector, serving hundreds of farmers across the region. Our commitment to quality, reliability, and customer satisfaction has been the cornerstone of our success.

@@ -52,3 +52,8 @@ prompt
 server.log
 # Skills directory
 /skills/
+
+# Admin credential files (contain hardcoded passwords)
+set-admin-password.ts
+setup-admin-credentials.ts
+update-admin-password.js
